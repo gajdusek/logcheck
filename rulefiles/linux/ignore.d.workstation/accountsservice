@@ -1,0 +1,1 @@
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ accounts-daemon\[[0-9]+\]: started daemon version [0-9\.]+$
