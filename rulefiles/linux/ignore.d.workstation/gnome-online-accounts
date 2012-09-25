@@ -1,0 +1,1 @@
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ goa\[[0-9]+\]: goa-daemon version [0-9\.]+ starting \[[^]]+\]$
