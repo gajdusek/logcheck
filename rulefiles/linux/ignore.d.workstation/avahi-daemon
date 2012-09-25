@@ -1,0 +1,13 @@
+# common to daemon start/stop
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ avahi-daemon\[[0-9]+\]: (Joining|Leaving) mDNS multicast group on interface eth[0-9]+\.IPv4 with address ([0-9]{1,3}\.){3}[0-9]{1,3}\.$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ avahi-daemon\[[0-9]+\]: (Joining|Leaving) mDNS multicast group on interface eth[0-9]+\.IPv6 with address ([0-9a-f]{1,4}::?){4}[0-9a-f]{1,4}\.$
+
+# starting
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ avahi-daemon\[[0-9]+\]: New relevant interface eth[0-9]+\.IPv(4|6) for mDNS\.$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ avahi-daemon\[[0-9]+\]: Registering new address record for ([0-9]{1,3}\.){3}[0-9]{1,3} on eth[0-9]+\.IPv4\.$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ avahi-daemon\[[0-9]+\]: Registering new address record for ([0-9a-f]{1,4}::?){4}[0-9a-f]{1,4} on eth[0-9]+\.\*\.$
+
+# stopping (system sleep etc.)
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ avahi-daemon\[[0-9]+\]: Withdrawing address record for ([0-9]{1,3}\.){3}[0-9]{1,3} on eth[0-9]+\.$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ avahi-daemon\[[0-9]+\]: Withdrawing address record for ([0-9a-f]{1,4}::?){4}[0-9a-f]{1,4} on eth[0-9]+\.$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ avahi-daemon\[[0-9]+\]: Interface eth[0-9]+\.IPv(4|6) no longer relevant for mDNS\.$
