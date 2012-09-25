@@ -1,1 +1,5 @@
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ pulseaudio\[[0-9]+\]: \[pulseaudio\] pid\.c: Daemon already running\.$
+
+# ignore rtkit request from pulse-audio started by normal user (UID >=1000) or Debian-gdm (106)
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ rtkit-daemon\[[0-9]+\]: Successfully made thread [0-9]+ of process [0-9]+ \(/usr/bin/pulseaudio\) owned by '(106|[1-9][0-9]{3})' RT at priority [1-5]\.$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ rtkit-daemon\[[0-9]+\]: Successfully made thread [0-9]+ of process [0-9]+ \(/usr/bin/pulseaudio\) owned by '(106|[1-9][0-9]{3})' high priority at nice level -?[0-9]+\.$
