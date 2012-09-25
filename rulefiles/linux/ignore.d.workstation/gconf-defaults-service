@@ -1,0 +1,2 @@
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ dbus\[[0-9]+\]: \[system\] Activating service name='org\.gnome\.GConf\.Defaults'( \(using servicehelper\))?$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ dbus\[[0-9]+\]: \[system\] Successfully activated service 'org\.gnome\.GConf\.Defaults'$
