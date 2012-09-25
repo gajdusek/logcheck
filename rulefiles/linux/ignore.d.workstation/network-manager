@@ -1,0 +1,71 @@
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ NetworkManager\[[0-9]+\]: <info> NetworkManager \(version [0-9\.]+\) is starting\.\.\.$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ NetworkManager\[[0-9]+\]: <info> Read config file /etc/NetworkManager/NetworkManager\.conf$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ NetworkManager\[[0-9]+\]: <info> WEXT support is enabled$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ NetworkManager\[[0-9]+\]:    SCPlugin-Ifupdown: init!$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ NetworkManager\[[0-9]+\]:    SCPlugin-Ifupdown: update_system_hostname
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ NetworkManager\[[0-9]+\]:    SCPluginIfupdown: management mode: unmanaged
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ NetworkManager\[[0-9]+\]:    SCPlugin-Ifupdown: devices? added \(path: /sys/devices/[^, ]+, iface: (eth|wlan|lo)[0-9]*\)(: no ifupdown configuration found\.)?$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ NetworkManager\[[0-9]+\]:    SCPlugin-Ifupdown: end _init\.$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ NetworkManager\[[0-9]+\]: <info> Loaded plugin (ifupdown|keyfile):
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ NetworkManager\[[0-9]+\]:    Ifupdown: get unmanaged devices count: [0-9]+$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ NetworkManager\[[0-9]+\]:    SCPlugin-Ifupdown: \([0-9]+\) \.\.\. get_connections( \(managed=false\): return empty list)?\.$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ NetworkManager\[[0-9]+\]:    keyfile: parsing
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ NetworkManager\[[0-9]+\]:    keyfile: \s*read connection '[^']+'$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ NetworkManager\[[0-9]+\]: <info> modem-manager is now available$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ NetworkManager\[[0-9]+\]: <info> monitoring kernel firmware directory '/lib/firmware'\.$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ NetworkManager\[[0-9]+\]: <info> found WiFi radio killswitch rfkill[0-9]+
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ NetworkManager\[[0-9]+\]: <info> (WiFi|WWAN) enabled by radio killswitch; (enabled|disabled) by state file$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ NetworkManager\[[0-9]+\]: <info> WWAN now enabled by management service$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ NetworkManager\[[0-9]+\]: <info> WiMAX enabled by radio killswitch; (enabled|disabled) by state file$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ NetworkManager\[[0-9]+\]: <info> Networking is enabled by state file$
+
+# Sleeping / Waking up
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ NetworkManager\[[0-9]+\]: <info> sleep requested \(sleeping: no  enabled: yes\)$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ NetworkManager\[[0-9]+\]: <info> wake requested \(sleeping: yes  enabled: yes\)$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ NetworkManager\[[0-9]+\]: <info> sleeping or disabling\.\.\.$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ NetworkManager\[[0-9]+\]: <info> waking up and re-enabling\.\.\.$
+
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ NetworkManager\[[0-9]+\]: <info> \((eth|wlan)[0-9]+\): cleaning up\.\.\.$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ NetworkManager\[[0-9]+\]: <info> \((eth|wlan)[0-9]+\): now (un)?managed$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ NetworkManager\[[0-9]+\]: <info> \((eth|wlan)[0-9]+\): (taking down|bringing up|preparing) device\.$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ NetworkManager\[[0-9]+\]: <info> \((eth|wlan)[0-9]+\): deactivating device \(reason '(sleeping|managed|user-requested|none)'\) \[[0-9]+\]$
+
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ NetworkManager\[[0-9]+\]: <info> \((eth|wlan)[0-9]+\): device state change: activated -> unmanaged \(reason 'sleeping'\) \[[ 0-9]+\]$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ NetworkManager\[[0-9]+\]: <info> \((eth|wlan)[0-9]+\): device state change: unavailable -> unmanaged \(reason 'sleeping'\) \[[ 0-9]+\]$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ NetworkManager\[[0-9]+\]: <info> \((eth|wlan)[0-9]+\): device state change: unmanaged -> unavailable \(reason 'managed'\) \[[ 0-9]+\]$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ NetworkManager\[[0-9]+\]: <info> \((eth|wlan)[0-9]+\): device state change: unavailable -> disconnected \(reason '(carrier-changed|none)'\) \[[ 0-9]+\]$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ NetworkManager\[[0-9]+\]: <info> \((eth|wlan)[0-9]+\): device state change: disconnected -> prepare \(reason 'none'\) \[[ 0-9]+\]$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ NetworkManager\[[0-9]+\]: <info> \((eth|wlan)[0-9]+\): device state change: prepare -> config \(reason 'none'\) \[[ 0-9]+\]$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ NetworkManager\[[0-9]+\]: <info> \((eth|wlan)[0-9]+\): device state change: config -> ip-config \(reason 'none'\) \[[ 0-9]+\]$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ NetworkManager\[[0-9]+\]: <info> \((eth|wlan)[0-9]+\): device state change: ip-config -> activated \(reason 'none'\) \[[ 0-9]+\]$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ NetworkManager\[[0-9]+\]: <info> \((eth|wlan)[0-9]+\): device state change: activated -> disconnected \(reason 'user-requested'\) \[[ 0-9]+\]$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ NetworkManager\[[0-9]+\]: <info> \((eth|wlan)[0-9]+\): device state change: failed -> disconnected \(reason 'none'\) \[[ 0-9]+\]$
+
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ NetworkManager\[[0-9]+\]: <info> \((eth|wlan)[0-9]+\): carrier (is|now) ON( \(device state [0-9]+\))?$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ NetworkManager\[[0-9]+\]: <info> \((eth|wlan)[0-9]+\): new (Ethernet|802.11 WiFi) device \(driver: '[a-zA-Z0-9_]+' ifindex: [0-9]+\)$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ NetworkManager\[[0-9]+\]: <info> \((eth|wlan)[0-9]+\): exported as [^ ]+$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ NetworkManager\[[0-9]+\]: <info> \((eth|wlan)[0-9]+\): using [a-zA-Z0-9_]+ for WiFi device control$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ NetworkManager\[[0-9]+\]: <warn> \((eth|wlan)[0-9]+\): driver supports Access Point \(AP\) mode$
+
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ dbus\[[0-9]+\]: \[system\] Activating service name='org\.freedesktop\.nm_dispatcher'( \(using servicehelper\))?$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ dbus\[[0-9]+\]: \[system\] Successfully activated service 'org\.freedesktop\.nm_dispatcher'$
+
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ NetworkManager\[[0-9]+\]: <info> Auto-activating connection '[^']+'\.$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ NetworkManager\[[0-9]+\]: <info> Activation \((eth|wlan)[0-9]+\) starting connection '[^']+'$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ NetworkManager\[[0-9]+\]: <info>   (address|gateway) ([0-9]{1,3}\.){3}[0-9]{1,3}$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ NetworkManager\[[0-9]+\]: <info>   prefix [0-9]+ \(([0-9]{1,3}\.){3}[0-9]{1,3}\)$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ NetworkManager\[[0-9]+\]: <info>   nameserver '([0-9]{1,3}\.){3}[0-9]{1,3}'$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ NetworkManager\[[0-9]+\]: <info> Policy set '[^']+' \((eth|wlan)[0-9]+\) as default for IPv(4|6) routing and DNS\.$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ NetworkManager\[[0-9]+\]: <info> Activation \((eth|wlan)[0-9]+\) Stage [0-9] of 5 \([ a-zA-Z46]+\) (scheduled|started|starting|successful|complete)\.+$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ NetworkManager\[[0-9]+\]: <info> Activation \((eth|wlan)[0-9]+\) Beginning DHCPv4 transaction \(timeout in [0-9]+ seconds\)$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ NetworkManager\[[0-9]+\]: <info> Activation \((eth|wlan)[0-9]+\) Beginning IP6 addrconf\.$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ NetworkManager\[[0-9]+\]: <info> Activation \((eth|wlan)[0-9]+\) successful, device activated\.$
+
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ NetworkManager\[[0-9]+\]: <info> dhclient started with pid [0-9]+$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ NetworkManager\[[0-9]+\]: <info> \((eth|wlan)[0-9]+\): canceled DHCP transaction, DHCP client pid [0-9]+$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ NetworkManager\[[0-9]+\]: <info> \((eth|wlan)[0-9]+\): DHCPv4 state changed nbi -> preinit$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ NetworkManager\[[0-9]+\]: <info> \((eth|wlan)[0-9]+\): DHCPv4 state changed preinit -> (reboot|bound)$
+
+
+# Ignore IPv6 configuration errors
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ NetworkManager\[[0-9]+\]: <info> \((eth|wlan)[0-9]+\): IP6 addrconf timed out or failed\.$
