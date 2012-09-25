@@ -1,0 +1,2 @@
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ dbus\[[0-9]+\]: \[system\] Activating service name='org\.freedesktop\.PackageKit'( \(using servicehelper\))?$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ dbus\[[0-9]+\]: \[system\] Successfully activated service 'org\.freedesktop\.PackageKit'$
