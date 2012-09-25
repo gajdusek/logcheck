@@ -1,0 +1,1 @@
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ nautilus: \[N-A\] Nautilus-Actions (Menu Extender|Tracker)( [0-9\.]+)? initializing\.*$
