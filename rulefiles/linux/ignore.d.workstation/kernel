@@ -165,3 +165,6 @@
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ kernel:( \[ *[[:digit:]]+\.[[:digit:]]+\])? cfg80211: Calling CRDA (to update world regulatory domain|for country: [A-Z][A-Z])$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ kernel:( \[ *[[:digit:]]+\.[[:digit:]]+\])? Monitor-Mwait will be used to enter C-[123] state$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ kernel:( \[ *[[:digit:]]+\.[[:digit:]]+\])? [ ._[:alnum:]-]+: [ ._[:alnum:]-]+ sensor detected$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ kernel:( \[ *[[:digit:]]+\.[[:digit:]]+\])? vboxdrv: Found [0-9]+ processor cores\.$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ kernel:( \[ *[[:digit:]]+\.[[:digit:]]+\])? vboxdrv: TSC mode is 'synchronous', kernel timer mode is 'normal'\.$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ kernel:( \[ *[[:digit:]]+\.[[:digit:]]+\])? vboxdrv: Successfully loaded version [0-9a-zA-Z\._-]+ \(interface 0x[0-9a-zA-Z]+\)\.$
