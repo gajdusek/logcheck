@@ -168,3 +168,80 @@
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ kernel:( \[ *[[:digit:]]+\.[[:digit:]]+\])? vboxdrv: Found [0-9]+ processor cores\.$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ kernel:( \[ *[[:digit:]]+\.[[:digit:]]+\])? vboxdrv: TSC mode is 'synchronous', kernel timer mode is 'normal'\.$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ kernel:( \[ *[[:digit:]]+\.[[:digit:]]+\])? vboxdrv: Successfully loaded version [0-9a-zA-Z\._-]+ \(interface 0x[0-9a-zA-Z]+\)\.$
+
+
+###########################################################
+# Power management (system sleep/freeze & wakeup/restore) #
+###########################################################
+
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ kernel:( \[ *[[:digit:]]+\.[[:digit:]]+\])? ACPI: Preparing to enter system sleep state S[0-9]$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ kernel:( \[ *[[:digit:]]+\.[[:digit:]]+\])? ACPI: Waking up from system sleep state S[0-9]$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ kernel:( \[ *[[:digit:]]+\.[[:digit:]]+\])? ACPI: Low-level resume complete$
+
+# Do not filter messages indicating entering the sleep or wakeup finishing,
+# so user may distinquish from messages that under other circumstaces may indicate HW failures (e.g. usb hub power lost)
+#^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ kernel:( \[ *[[:digit:]]+\.[[:digit:]]+\])? PM: Syncing filesystems \.\.\. done\.$
+#^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ kernel:( \[ *[[:digit:]]+\.[[:digit:]]+\])? PM: Finishing wakeup\.$
+#^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ kernel:( \[ *[[:digit:]]+\.[[:digit:]]+\])? PM: Image restored successfully\.$
+
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ kernel:( \[ *[[:digit:]]+\.[[:digit:]]+\])? PM: Preparing system for mem sleep$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ kernel:( \[ *[[:digit:]]+\.[[:digit:]]+\])? PM: Entering mem sleep$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ kernel:( \[ *[[:digit:]]+\.[[:digit:]]+\])? PM: (late )?(suspend|freeze) of devices complete after [\.0-9]+ msecs$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ kernel:( \[ *[[:digit:]]+\.[[:digit:]]+\])? PM: (Saving|Restoring) platform NVS memory$
+
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ kernel:( \[ *[[:digit:]]+\.[[:digit:]]+\])? PM: (early )?(resume|restore) of devices complete after [\.0-9]+ msecs$
+
+# PM freeze (hibernate) specific
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ kernel:( \[ *[[:digit:]]+\.[[:digit:]]+\])? PM: Basic memory bitmaps created$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ kernel:( \[ *[[:digit:]]+\.[[:digit:]]+\])? PM: Marking nosave pages: [0-9a-z]+ - [0-9a-z]+$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ kernel:( \[ *[[:digit:]]+\.[[:digit:]]+\])? PM: Preallocating image memory\.\.\. done \(allocated [0-9]+ pages\)$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ kernel:( \[ *[[:digit:]]+\.[[:digit:]]+\])? PM: Allocated [0-9]+ kbytes in [0-9\.]+ seconds \([0-9\.]+ MB/s\)$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ kernel:( \[ *[[:digit:]]+\.[[:digit:]]+\])? PM: Creating hibernation image:$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ kernel:( \[ *[[:digit:]]+\.[[:digit:]]+\])? PM: Need to copy [0-9]+ pages$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ kernel:( \[ *[[:digit:]]+\.[[:digit:]]+\])? PM: Normal pages needed: [0-9]+ \+ [0-9]+, available pages: [0-9]+$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ kernel:( \[ *[[:digit:]]+\.[[:digit:]]+\])? PM: Basic memory bitmaps freed$
+
+
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ kernel:( \[ *[[:digit:]]+\.[[:digit:]]+\])? Freezing user space processes \.\.\. \(elapsed [\.0-9]+ seconds\) done\.$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ kernel:( \[ *[[:digit:]]+\.[[:digit:]]+\])? Freezing remaining freezable tasks \.\.\. \(elapsed [\.0-9]+ seconds\) done\.$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ kernel:( \[ *[[:digit:]]+\.[[:digit:]]+\])? Restarting tasks \.\.\. ?(done\.)?$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ kernel:( \[ *[[:digit:]]+\.[[:digit:]]+\])? done\.$
+
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ kernel:( \[ *[[:digit:]]+\.[[:digit:]]+\])? Suspending console\(s\) \(use no_console_suspend to debug\)$
+
+# CPUs
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ kernel:( \[ *[[:digit:]]+\.[[:digit:]]+\])? Disabling non-boot CPUs \.\.\.$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ kernel:( \[ *[[:digit:]]+\.[[:digit:]]+\])? CPU[0-9]+: Thermal monitoring handled by SMI$
+
+# disks
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ kernel:( \[ *[[:digit:]]+\.[[:digit:]]+\])? sd 0:0:0:0: \[sd[a-z]\] Synchronizing SCSI cache$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ kernel:( \[ *[[:digit:]]+\.[[:digit:]]+\])? sd 0:0:0:0: \[sd[a-z]\] (Stopping|Starting) disk$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ kernel:( \[ *[[:digit:]]+\.[[:digit:]]+\])? ata[0-9]+\.00: configured for UDMA/[0-9]+$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ kernel:( \[ *[[:digit:]]+\.[[:digit:]]+\])? ata[0-9]+: SATA link up [0-9\.]+ Gbps \(SStatus [0-9]+ SControl [0-9]+\)$
+
+
+################################
+### devices power management ###
+################################
+
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ kernel:( \[ *[[:digit:]]+\.[[:digit:]]+\])? [a-z0-9_]+ 0000:[0-9a-z]{2}:[0-9a-z]{2}\.[0-9]+: restoring config space at offset 0x[0-9a-z]+ \(was 0x[0-9a-z]+, writing 0x[0-9a-z]+\)$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ kernel:( \[ *[[:digit:]]+\.[[:digit:]]+\])? [a-z0-9_]+ 0000:[0-9a-z]{2}:[0-9a-z]{2}\.[0-9]+: PCI INT [A-Z] disabled$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ kernel:( \[ *[[:digit:]]+\.[[:digit:]]+\])? [a-z0-9_]+ 0000:[0-9a-z]{2}:[0-9a-z]{2}\.[0-9]+: PCI INT [A-Z] -> GSI [0-9]+ \(level, low\) -> IRQ [0-9]+$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ kernel:( \[ *[[:digit:]]+\.[[:digit:]]+\])? [a-z0-9_]+ 0000:[0-9a-z]{2}:[0-9a-z]{2}\.[0-9]+: irq [0-9]+ for MSI/MSI-X$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ kernel:( \[ *[[:digit:]]+\.[[:digit:]]+\])? [a-z0-9_]+ 0000:[0-9a-z]{2}:[0-9a-z]{2}\.[0-9]+: PME# (enabled|disabled)$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ kernel:( \[ *[[:digit:]]+\.[[:digit:]]+\])? [a-z0-9_]+ 0000:[0-9a-z]{2}:[0-9a-z]{2}\.[0-9]+: wake-up capability (enabled|disabled) by ACPI$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ kernel:( \[ *[[:digit:]]+\.[[:digit:]]+\])? [a-z0-9_]+ 0000:[0-9a-z]{2}:[0-9a-z]{2}\.[0-9]+: wake-up capability (enabled|disabled) by ACPI$
+
+# PCI latency setting to default 64
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ kernel:( \[ *[[:digit:]]+\.[[:digit:]]+\])? [a-z0-9_]+ 0000:[0-9a-z]{2}:[0-9a-z]{2}\.[0-9]+: setting latency timer to 64$
+
+# USB hub
+# Do not ignore, under other circumstances this may indicate USB hub hardware failure.
+#^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ kernel:( \[ *[[:digit:]]+\.[[:digit:]]+\])? usb usb[0-9]+: root hub lost power or was reset$
+
+# backlight restore
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ kernel:( \[ *[[:digit:]]+\.[[:digit:]]+\])? video LNXVIDEO:[0-9]{2}: Restoring backlight state$
+
+# ethernet
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ kernel:( \[ *[[:digit:]]+\.[[:digit:]]+\])? [a-z0-9_]+ 0000:[0-9a-z]{2}:[0-9a-z]{2}\.[0-9]+: eth[0-9]+: Link is up at [0-9]+ [a-zA-Z]+, full duplex$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ kernel:( \[ *[[:digit:]]+\.[[:digit:]]+\])? [a-z0-9_]+ 0000:[0-9a-z]{2}:[0-9a-z]{2}\.[0-9]+: eth[0-9]+: Flow control is on for TX and on for RX$
